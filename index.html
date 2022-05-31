@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping server and notifications route</title>
+</head>
+<body>
+    <h1>i am simple web site that will ping life-advise.herukoapp.com every 10 mins to keep it alive.</h1>
+    <h1>i also make fetch request to "push/" route every 8hours to push notifications to users</h1>
+    <script>
+        setInterval(()=>{
+            console.log('hello im ping one');
+            fetch("https://life-advise-server.herokuapp.com/").then((result) => {
+                console.log(result);
+            }).catch((err) => {
+                console.error(err);
+            });
+        }, 1000 * 60)
+    
+        setInterval(()=>{
+            console.log('hello im ping one');
+            fetch("https://life-advise-server.herokuapp.com/").then((result) => {
+                console.log(result);
+            }).catch((err) => {
+                console.error(err);
+            });
+        }, 28800000 )
+    </script>
+</body>
+</html>
